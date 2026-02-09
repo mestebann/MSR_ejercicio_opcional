@@ -29,11 +29,11 @@ try:
         p.stepSimulation()
         time.sleep(1./240.)
 
-        right_motor_value = p.readUserDebugParameter(right_id)
-        left_motor_value = p.readUserDebugParameter(left_id)
+        vertical_motor_value = p.readUserDebugParameter(right_id)
+        horizontal_motor_value = p.readUserDebugParameter(left_id)
         
-        p.setJointMotorControl2(robotId,1, p.VELOCITY_CONTROL, targetVelocity=right_motor_value)
-        p.setJointMotorControl2(robotId,0, p.VELOCITY_CONTROL, targetVelocity=left_motor_value)
+        p.setJointMotorControl2(robotId,0, p.VELOCITY_CONTROL, targetVelocity=horizontal_motor_value)
+        p.setJointMotorControl2(robotId,1, p.VELOCITY_CONTROL, targetVelocity=vertical_motor_value)
 
 except KeyboardInterrupt:
     pass
